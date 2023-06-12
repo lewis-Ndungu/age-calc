@@ -67,6 +67,9 @@ button:hover {
     color: #fff;
 }
 
+#copy{
+    color: transparent;
+}
 #no-button:hover {
     animation: shake 0.5s;
     animation-iteration-count: infinite;
