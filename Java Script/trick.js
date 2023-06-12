@@ -53,7 +53,7 @@ yesButton.addEventListener("click", () => {
     confetti.render();
 
     let p = document.createElement("p");
-    p.innerText = "Congrats you made the right choice 🎉 \nHere's my number😁: \n 0796078396😉";
+    p.innerText = "Congrats you made the right choice 🎉 \nHere's my number😁: \n 0796078396😉\n No need to memorise it, you've already copied it, just press paste and see😁";
     p.style.fontSize = "2rem";
     p.style.fontWeight = "bold";
     p.style.textAlign = "center";
