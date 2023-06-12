@@ -63,3 +63,17 @@ yesButton.addEventListener("click", () => {
     p.style.transform = "translate(-50%, -50%)";
     document.body.appendChild(p);
 });
+
+function copyToClipboard(element) {
+
+    var $temp = $("<input>");
+
+    $("body").append($temp);
+
+    $temp.val($(element).text()).select();
+
+    document.execCommand("copy");
+
+    $temp.remove();
+
+}
