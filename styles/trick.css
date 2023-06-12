@@ -62,13 +62,15 @@ button:hover {
     transform: scale(1.1);
 }
 
+#copy {
+
+    color: transparent;
+
+}
+
 #no-button {
     background-color: #e74c3c;
     color: #fff;
-}
-
-#copy{
-    color: transparent;
 }
 #no-button:hover {
     animation: shake 0.5s;
