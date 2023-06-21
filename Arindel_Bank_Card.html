@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles/bank card.css">
-    <title>Arindel Bank</title>
+    <link rel="stylesheet" href="../styles/bank card.css">
+    <title>Browser</title>
 </head>
 
 <body>
@@ -16,15 +16,21 @@
                     <div class="card-item__side -front">
                         <div class="card-item__focus" v-bind:class="{'-active' : focusElementStyle }" v-bind:style="focusElementStyle" ref="focusElement"></div>
                         <div class="card-item__cover">
-                            <img v-bind:src="'https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/' + currentCardBackground + '.jpeg'" class="card-item__bg">
+                            <img v-bind:src="'resources/card-background/' + currentCardBackground + '.jpeg'" class="card-item__bg">
                         </div>
 
                         <div class="card-item__wrapper">
                             <div class="card-item__top">
-                                <img src="https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/chip.png" class="card-item__chip">
+                                <img src="resources/sim.jpg" class="card-item__chip">
+                                <div class="logo">
+                                    <span
+                                        class="txt-rotate"
+                                        data-period="2000"
+                                        data-rotate='[ "Arindel", "International", "Bank", "Credit", "Card." ]'></span>
+                                </div>
                                 <div class="card-item__type">
                                     <transition name="slide-fade-up">
-                                        <img v-bind:src="'https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/' + getCardType + '.png'" v-if="getCardType" v-bind:key="getCardType" alt="" class="card-item__typeImg">
+                                        <img v-bind:src="'resources/card-icon/' + getCardType + '.png'" v-if="getCardType" v-bind:key="getCardType" alt="" class="card-item__typeImg">
                                     </transition>
                                 </div>
                             </div>
@@ -98,7 +104,7 @@
                     </div>
                     <div class="card-item__side -back">
                         <div class="card-item__cover">
-                            <img v-bind:src="'https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/' + currentCardBackground + '.jpeg'" class="card-item__bg">
+                            <img v-bind:src="'resources/card-background/' + currentCardBackground + '.jpeg'" class="card-item__bg">
                         </div>
                         <div class="card-item__band"></div>
                         <div class="card-item__cvv">
@@ -112,7 +118,7 @@
 
                             </div>
                             <div class="card-item__type">
-                                <img v-bind:src="'https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/' + getCardType + '.png'" v-if="getCardType" class="card-item__typeImg">
+                                <img v-bind:src="'resources/card-icon/' + getCardType + '.png'" v-if="getCardType" class="card-item__typeImg">
                             </div>
                         </div>
                     </div>
@@ -159,13 +165,15 @@
                 </div>
             </div>
 
-            <a href="https://wa.me/+254774192341" target="_blank" class="whatsapp">
+            <a href="https://wa.me/+254774192341" target="_blank" class="whatsapp"><ion-icon name="logo-whatsapp"></ion-icon>
                 Back to Whatsapp
             </a>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
         <script src="https://unpkg.com/vue-the-mask@0.11.1/dist/vue-the-mask.js"></script>
-        <script src="Java Script/bank card.js"></script>
+        <script src="../Java Script/bank card.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     </body>
 
 </html>
