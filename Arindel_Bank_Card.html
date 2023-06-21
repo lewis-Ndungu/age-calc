@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles/bank card.css">
+    <link rel="stylesheet" href="Styles/bank card.css">
     <title>Browser</title>
 </head>
 
@@ -16,12 +16,12 @@
                     <div class="card-item__side -front">
                         <div class="card-item__focus" v-bind:class="{'-active' : focusElementStyle }" v-bind:style="focusElementStyle" ref="focusElement"></div>
                         <div class="card-item__cover">
-                            <img v-bind:src="'resources/card-background/' + currentCardBackground + '.jpeg'" class="card-item__bg">
+                            <img v-bind:src="'Resources/Card-background/' + currentCardBackground + '.jpeg'" class="card-item__bg">
                         </div>
 
                         <div class="card-item__wrapper">
                             <div class="card-item__top">
-                                <img src="resources/sim.jpg" class="card-item__chip">
+                                <img src="Resources/sim.jpg" class="card-item__chip">
                                 <div class="logo">
                                     <span
                                         class="txt-rotate"
@@ -30,7 +30,7 @@
                                 </div>
                                 <div class="card-item__type">
                                     <transition name="slide-fade-up">
-                                        <img v-bind:src="'resources/card-icon/' + getCardType + '.png'" v-if="getCardType" v-bind:key="getCardType" alt="" class="card-item__typeImg">
+                                        <img v-bind:src="'Resources/Card-icon/' + getCardType + '.png'" v-if="getCardType" v-bind:key="getCardType" alt="" class="card-item__typeImg">
                                     </transition>
                                 </div>
                             </div>
@@ -104,7 +104,7 @@
                     </div>
                     <div class="card-item__side -back">
                         <div class="card-item__cover">
-                            <img v-bind:src="'resources/card-background/' + currentCardBackground + '.jpeg'" class="card-item__bg">
+                            <img v-bind:src="'Resources/Card-background/' + currentCardBackground + '.jpeg'" class="card-item__bg">
                         </div>
                         <div class="card-item__band"></div>
                         <div class="card-item__cvv">
@@ -118,7 +118,7 @@
 
                             </div>
                             <div class="card-item__type">
-                                <img v-bind:src="'resources/card-icon/' + getCardType + '.png'" v-if="getCardType" class="card-item__typeImg">
+                                <img v-bind:src="'Resources/Card-icon/' + getCardType + '.png'" v-if="getCardType" class="card-item__typeImg">
                             </div>
                         </div>
                     </div>
