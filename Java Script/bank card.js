@@ -133,3 +133,12 @@ window.onload = function() {
   css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
   document.body.appendChild(css);
 };
+
+const docTitle = document.title;
+window.addEventListener("blur", () => {
+  document.title = "Credit Card";
+});
+
+window.addEventListener("focus", () => {
+  document.title = docTitle;
+});
