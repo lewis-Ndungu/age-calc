@@ -1,8 +1,10 @@
-
-var split = document.getElementById("split").textContent.split(''),
+gsap.registerPlugin(Physics2DPlugin);
+var chars = document.querySelectorAll("#split > *"),
     tl = gsap.timeline({ repeat: -1 });
+
 gsap.set("#split", { opacity: 1 });
-tl.from(split, {
+
+tl.from(chars, {
     duration: 1,
     y: 100,
     rotation: 90,
@@ -10,7 +12,7 @@ tl.from(split, {
     ease: "elastic",
     stagger: 0.03,
     onComplete: function() {
-        tl.to(split, {
+        tl.to(chars, {
             duration: 2.5,
             opacity: 0,
             rotation: "random(-2000, 2000)",
@@ -23,7 +25,6 @@ tl.from(split, {
         }, 3);
     }
 });
-
 
 (function() {
   var COLORS, NUM_CONFETTI, PI_2, canvas, confetti, context, drawCircle, i, range, resizeWindow, xpos;
