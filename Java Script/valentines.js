@@ -1,16 +1,16 @@
-        gsap.registerPlugin(SplitText, Physics2DPlugin);
-        var split = SplitText.create("#split", { type: "chars" }),
-            tl = gsap.timeline({ repeat: -1 });
-        gsap.set("#split", { opacity: 1 });
-        tl.from(split.chars, {
-            duration: 1,
-            y: 100,
-            rotation: 90,
-            opacity: 0,
-            ease: "elastic",
-            stagger: 0.03
-        });
-        tl.to(split.chars, {
+gsap.registerPlugin(Physics2DPlugin);
+var split = document.getElementById("split").textContent.split(''),
+    tl = gsap.timeline({ repeat: -1 });
+gsap.set("#split", { opacity: 1 });
+tl.from(split, {
+    duration: 1,
+    y: 100,
+    rotation: 90,
+    opacity: 0,
+    ease: "elastic",
+    stagger: 0.03,
+    onComplete: function() {
+        tl.to(split, {
             duration: 2.5,
             opacity: 0,
             rotation: "random(-2000, 2000)",
@@ -21,10 +21,12 @@
                 gravity: 800
             })
         }, 3);
+    }
+});
 
 
 (function() {
-  var COLORS, Confetti, NUM_CONFETTI, PI_2, canvas, confetti, context, drawCircle, i, range, resizeWindow, xpos;
+  var COLORS, NUM_CONFETTI, PI_2, canvas, confetti, context, drawCircle, i, range, resizeWindow, xpos;
 
   NUM_CONFETTI = 50;
 
@@ -74,7 +76,7 @@
     };
   })();
 
-  Confetti = class Confetti {
+  class Confetti {
     constructor() {
       this.style = COLORS[~~range(0, 5)];
       this.rgb = `rgba(${this.style[0]},${this.style[1]},${this.style[2]}`;
@@ -111,13 +113,12 @@
       }
       return drawCircle(~~this.x, ~~this.y, this.r, `${this.rgb},${this.opacity})`);
     }
-
-  };
+  }
 
   confetti = (function() {
-    var j, ref, results;
+    var j, results;
     results = [];
-    for (i = j = 1, ref = NUM_CONFETTI; (1 <= ref ? j <= ref : j >= ref); i = 1 <= ref ? ++j : --j) {
+    for (i = j = 1; j <= NUM_CONFETTI; i = ++j) {
       results.push(new Confetti());
     }
     return results;
