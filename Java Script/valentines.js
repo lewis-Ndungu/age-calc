@@ -1,4 +1,4 @@
-gsap.registerPlugin(Physics2DPlugin);
+
 var split = document.getElementById("split").textContent.split(''),
     tl = gsap.timeline({ repeat: -1 });
 gsap.set("#split", { opacity: 1 });
